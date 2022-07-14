@@ -1,6 +1,7 @@
 import {useEffect} from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../action/shared'
+import Login from './Login'
 
 function App(props) {
   useEffect(()=>{
@@ -8,7 +9,7 @@ function App(props) {
   },[])
   return (
     <div >
-      <h1>Starter Code</h1>
+      <Login />
     </div>
   );
 }

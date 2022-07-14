@@ -1,0 +1,12 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+.login_text{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    padding: 20px;
+}
