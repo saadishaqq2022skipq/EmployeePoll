@@ -1,6 +1,6 @@
 import { getInitialData } from "../utils/api";
 import { recieveUsers } from "./users";
-import { recieveQuestions } from "./question";
+import { recieveQuestions } from "./questions";
 import { setAuthedUser } from "./authedUser";
 
 const AUTHED_ID = 'sarahedo'
