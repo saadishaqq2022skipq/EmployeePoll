@@ -3,8 +3,10 @@ import { recieveUsers } from "./users";
 import { recieveQuestions } from "./question";
 import { setAuthedUser } from "./authedUser";
 
+const AUTHED_ID = 'sarahedo'
+
 export function handleInitialData(){
-    const AUTHED_ID = 'sarahedo'
+    
     return(dispatch) => {
         return getInitialData().then(({users, questions})=>{
             dispatch(recieveUsers(users))
