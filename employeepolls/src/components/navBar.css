@@ -1,0 +1,24 @@
+.navBar{
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f8ff;
+    border-bottom: 10px;
+    border-color: black;
+    padding: 20px;
+    
+}
+
+.navBar_link{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.navBar_Avatar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+

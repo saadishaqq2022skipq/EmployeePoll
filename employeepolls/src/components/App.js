@@ -2,6 +2,7 @@ import {useEffect} from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../action/shared'
 import Login from './Login'
+import NavBar from './NavBar'
 
 function App(props) {
   useEffect(()=>{
@@ -9,6 +10,7 @@ function App(props) {
   },[])
   return (
     <div >
+      <NavBar />
       <Login />
     </div>
   );
