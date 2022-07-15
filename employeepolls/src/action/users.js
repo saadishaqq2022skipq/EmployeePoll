@@ -1,4 +1,7 @@
 export const RECIEVE_USERS = "RECIEVE_USERS";
+export const SAVE_ANSWER_USER = "SAVE_ANSWER_USER"
+export const ADD_QUESTION_USER = "ADD_QUESTION_USER"
+
 
 export function recieveUsers(users){
     return{
@@ -7,3 +10,20 @@ export function recieveUsers(users){
     }
 }
 
+export function saveAnswerUser({authedUser, questionId, answer}){
+    return{
+        type: SAVE_ANSWER_USER,
+        authedUser,
+        questionId,
+        answer
+    }
+
+}
+
+export function addQuestionUser(question){
+    return{
+        type: ADD_QUESTION_USER,
+        question
+    }
+
+}
