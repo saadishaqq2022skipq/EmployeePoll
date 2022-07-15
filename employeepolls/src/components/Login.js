@@ -44,7 +44,7 @@ function Login({dispatch, authUser, users}) {
 
         <caption>Password</caption>
         <TextField
-          fullwidth
+          fullWidth
           margin='dense'
           id="outlined-password-input"
           label="Password"
