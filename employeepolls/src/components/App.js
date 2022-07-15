@@ -1,9 +1,10 @@
 import {useEffect} from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../action/shared'
-import Login from './Login'
+//import Login from './Login'
 //import NavBar from './NavBar'
-import PollPage from './PollPage'
+//import PollPage from './PollPage'
+import Question from './Question'
 
 function App(props) {
   useEffect(()=>{
@@ -11,7 +12,7 @@ function App(props) {
   },[])
   return (
     <div >
-      <PollPage />
+      <Question />
     </div>
   );
 }
