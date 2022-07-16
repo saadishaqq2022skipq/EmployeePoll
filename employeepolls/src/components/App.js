@@ -4,7 +4,8 @@ import { handleInitialData } from '../action/shared'
 //import Login from './Login'
 //import NavBar from './NavBar'
 //import PollPage from './PollPage'
-import Question from './Question'
+//import Question from './Question'
+import Leaderboard from './Leaderboard'
 
 function App(props) {
   useEffect(()=>{
@@ -12,7 +13,7 @@ function App(props) {
   },[])
   return (
     <div >
-      <Question />
+      <Leaderboard />
     </div>
   );
 }

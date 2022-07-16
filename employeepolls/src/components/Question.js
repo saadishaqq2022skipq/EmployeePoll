@@ -14,7 +14,7 @@ function Question({id, questions}) {
     }
 
   return (
-  questions && 
+   
     <div style={{width:'100px'}}>
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
