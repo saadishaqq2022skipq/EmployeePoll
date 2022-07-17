@@ -1,27 +1,28 @@
 import { getInitialData, saveQuestionAnswer, saveQuestion } from "../utils/api";
 import { recieveUsers, saveAnswerUser, addQuestionUser } from "./users";
 import { recieveQuestions, saveAnswerQuestion,addQuestion } from "./questions";
-import { setAuthedUser } from "./authedUser";
+//import { Info } from "@mui/icons-material";
+//import { setAuthedUser } from "./authedUser";
 
-const AUTHED_ID = 'sarahedo'
+
 
 export function handleInitialData(){
     
-    return(dispatch) => {
+    return (dispatch) => {
         return getInitialData().then(({users, questions})=>{
             dispatch(recieveUsers(users))
             dispatch(recieveQuestions(questions))
-            dispatch(setAuthedUser(AUTHED_ID))
+            
         })
     }
 }
 
-export function handleSaveAnswer(k){
+export function handleSaveAnswer(info){
     return (dispatch) =>{
-        saveQuestionAnswer(k)
+        saveQuestionAnswer(info)
         .then(()=>{
-            dispatch(saveAnswerQuestion(k))
-            dispatch(saveAnswerUser(k))
+            dispatch(saveAnswerQuestion(info))
+            dispatch(saveAnswerUser(info))
         }).catch((e)=>{
             console.log("Error in saving answer: ", e)
         })

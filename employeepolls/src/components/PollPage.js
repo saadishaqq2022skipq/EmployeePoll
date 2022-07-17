@@ -1,12 +1,18 @@
 import { Button, TextField } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { handleAddQuestion } from '../action/shared'
 //import Login from './Login'
-import NavBar from './NavBar'
+//import NavBar from './NavBar'
 import './PollPage.css'
 import {connect} from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function PollPage({dispatch,auth}) {
+
+const navigate = useNavigate()
+useEffect(()=>{
+    !auth && navigate('/login')
+},[auth, navigate])
 const [firstOption, setFirstOption] = useState('')
 const [secondOption, setSecondOption] = useState('')
 function handlePoll(e){
@@ -20,15 +26,13 @@ function handlePoll(e){
     dispatch(handleAddQuestion(question))
     setFirstOption('')
     setSecondOption('')
+    navigate('/')
 
 
 }  
   
-  return (
+  return ( auth &&
     <>
-        <div>
-            <NavBar />
-        </div>
         <div className='pollForm'>
             <h1>Would you Rather</h1>
             <caption>First Option</caption>

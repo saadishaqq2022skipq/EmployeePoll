@@ -17,11 +17,11 @@ export function addQuestion(question){
     }
 }
 
-export function saveAnswerQuestion({authedUser, questionId,answer}){
+export function saveAnswerQuestion({authedUser, qid,answer}){
     return{
         type: SAVE_ANSWER_QUESTION,
         authedUser,
-        questionId,
+        qid,
         answer
     }
 }

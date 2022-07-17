@@ -10,11 +10,11 @@ export function recieveUsers(users){
     }
 }
 
-export function saveAnswerUser({authedUser, questionId, answer}){
+export function saveAnswerUser({authedUser, qid, answer}){
     return{
         type: SAVE_ANSWER_USER,
         authedUser,
-        questionId,
+        qid,
         answer
     }
 

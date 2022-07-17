@@ -1,21 +1,29 @@
 import React from 'react'
-import {  TextField, Button, MenuItem, Select } from '@mui/material';
+import {  Button, MenuItem, Select } from '@mui/material';
 import  './login.css'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {setAuthedUser} from '../action/authedUser'
 import {connect} from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 
 function Login({dispatch, authUser, users}) {
 
 
-  const [user, setUser] = useState('select')
-  const [password, setPassword]=useState("")
+  const [user, setUser] = useState('')
+  
 
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    authUser && navigate(-1)
+  },[authUser, navigate])
 
   function handleLogin(){
-    if(user !== 'select' && user !== 'Select User' && password === user.password){
+
+  
       dispatch(setAuthedUser(user))
-    }
+      navigate(-1)
+    
   }
   return (
     <div className='login'>
@@ -31,9 +39,7 @@ function Login({dispatch, authUser, users}) {
            value={user}
            onChange={(e)=>setUser(e.target.value)}
          >
-    <MenuItem>
-      <em>Select User</em>
-    </MenuItem>
+    
     {Object.keys(users).map(s =>(
       <MenuItem  key={users[s].id} value={users[s].id}>
         {users[s].name}
@@ -42,20 +48,14 @@ function Login({dispatch, authUser, users}) {
     
   </Select>
 
-        <caption>Password</caption>
-        <TextField
-          fullWidth
-          margin='dense'
-          id="outlined-password-input"
-          label="Password"
-          type="password"
-          onChange={(e)=>setPassword(e.target.value)}
-        />
+       
       </div>
       <div>
+        {  (user !== '') ?(
         <Button variant="contained" color="success" onClick={handleLogin}>
            Submit
-        </Button>
+        </Button>):(<Button variant='contained' disabled>Submit</Button>)
+        }
       </div>
    
 

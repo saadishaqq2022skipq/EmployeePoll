@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {TableContainer, Table,TableRow, TableCell, TableHead, TableBody, Avatar} from '@mui/material'
 import {connect} from 'react-redux'
-import NavBar from './NavBar'
+//import NavBar from './NavBar'
+import { useNavigate } from 'react-router-dom'
+import './leaderboard.css'
 
 function Leaderboard({users, sorted, auth}) {
-  return (
+  
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+        !auth && navigate('/login')
+    },[auth, navigate])
+  
+    return (
+        users &&
     <div >
-        <NavBar />
-    <div style={{display:'flex', justifyContent:'center', padding:'30px'}}>
-    <TableContainer >
+    <div className='leaderboard'>
+    <TableContainer className='leaderboardTable'>
       <Table sx={{ maxWidth: 650 }} aria-label="simple table" border='2px'>
         <TableHead>
           <TableRow>
