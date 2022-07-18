@@ -15,13 +15,13 @@ function NavBar({dispatch, auth }) {
   return (
     <div className='navBar'>
         <div className='navBar_link'>
-            <Link to="/" underline='none'>
-                Home
+            <Link to="/" underline='none' data-testid='home'>
+                Home 
             </Link>
-            <Link to="/leaderboard" underline='none'>
+            <Link to="/leaderboard" underline='none' data-testid='leaderboard'>
                 Leaderboard
             </Link>
-            <Link to='/pollpage' underline='none'>
+            <Link to='/pollpage' underline='none' data-testid='new'>
                 New
             </Link>
         </div>
@@ -29,9 +29,10 @@ function NavBar({dispatch, auth }) {
             { auth &&<>
             <Avatar src={auth.avatarURL} />
                
-            <Button variant="text" onClick={handleLogout}>logout</Button>
+            
             </>
             }
+            <Button variant="text" onClick={handleLogout} data-testid= "logout">logout</Button>
         </div>
     </div>
   )

@@ -16,7 +16,7 @@ export function users(state = {}, action){
                     ...state[action.authedUser],
                     answers:{
                         ...state[action.authedUser].answers,
-                        [action.questionId]:action.answer
+                        [action.qid]:action.answer
                     }
                 }
             }

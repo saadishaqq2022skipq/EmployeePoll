@@ -21,7 +21,7 @@ function App({dispatch, auth}) {
  
   return (<>
     <BrowserRouter>
-    {auth && <NavBar />}
+    {auth && <NavBar  />}
     <div>
       <Routes>
         <Route exact path='/' element={<Home />} />

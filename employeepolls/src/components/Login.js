@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Button, MenuItem, Select } from '@mui/material';
+//import {  Button, MenuItem, Select } from '@mui/material';
 import  './login.css'
 import {useState, useEffect} from 'react'
 import {setAuthedUser} from '../action/authedUser'
@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 function Login({dispatch, authUser, users}) {
 
 
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState('Select')
   
 
   const navigate = useNavigate()
@@ -35,27 +35,30 @@ function Login({dispatch, authUser, users}) {
         
 
         <caption>Select User</caption>
-        <Select
+        <select
            value={user}
            onChange={(e)=>setUser(e.target.value)}
+           data-testid= 'dropdown' 
+           style={{padding:10}}
          >
-    
+            <option>Select User</option>
     {Object.keys(users).map(s =>(
-      <MenuItem  key={users[s].id} value={users[s].id}>
-        {users[s].name}
-      </MenuItem>
+             <option  key={users[s].id} value={users[s].id}>
+                {users[s].name}
+             </option>
     ))}
     
-  </Select>
+  </select>
 
        
       </div>
       <div>
-        {  (user !== '') ?(
-        <Button variant="contained" color="success" onClick={handleLogin}>
+        {  user !== 'Select' && user !== 'Select User' &&
+        <button  data-testid='login' style={{padding:10}} onClick={handleLogin}>
            Submit
-        </Button>):(<Button variant='contained' disabled>Submit</Button>)
+        </button>
         }
+        
       </div>
    
 

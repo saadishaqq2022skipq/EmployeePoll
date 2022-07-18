@@ -24,7 +24,7 @@ function Vote({dispatch, questions, users, auth}) {
         dispatch(handleSaveAnswer(info))
     }
 
-    if(!questions[question_id]) return (<h1>Error 404 Page not found</h1>)
+    if(!questions[question_id]) return (<h1 data-testid='404'>Error 404 Page not found</h1>)
   else return ( users &&
     <div className='VotePoll'>
         <h1>Poll By {questions[question_id].author} </h1>

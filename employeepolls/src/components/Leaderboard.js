@@ -22,7 +22,7 @@ function Leaderboard({users, sorted, auth}) {
         <TableHead>
           <TableRow>
             <TableCell>Users</TableCell>
-            <TableCell align="right">Answered</TableCell>
+            <TableCell align="right" data-testid='answered'>Answered</TableCell>
             <TableCell align="right">Created</TableCell>
           </TableRow>
         </TableHead>
