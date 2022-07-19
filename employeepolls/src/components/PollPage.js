@@ -35,7 +35,7 @@ function handlePoll(e){
     <>
         <div className='pollForm'>
             <h1>Would you Rather</h1>
-            <caption>First Option</caption>
+            <p>First Option</p>
             <TextField fullWidth id="outlined-basic" label="Enter First Option"
             value={firstOption}
             onChange={(e)=>setFirstOption(e.target.value)}
@@ -43,7 +43,7 @@ function handlePoll(e){
             
             />
 
-            <caption>Second Option</caption>
+            <p>Second Option</p>
             <TextField fullWidth id="outlined-basic" label="Enter Second Option"
             value={secondOption}
             onChange={(e)=>setSecondOption(e.target.value)}
@@ -51,7 +51,7 @@ function handlePoll(e){
             
             />
 
-            {(firstOption && secondOption)? (<Button variant="contained" color='success' onClick={handlePoll} >Submit</Button>): (<Button variant='contained' disabled > Submit</Button>)}
+            {firstOption && secondOption ? (<Button variant="contained" color='success' onClick={handlePoll} >Submit</Button>): (<Button variant='contained' disabled > Submit</Button>)}
         
         </div>
     </>

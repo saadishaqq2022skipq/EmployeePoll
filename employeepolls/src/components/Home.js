@@ -1,4 +1,4 @@
-import React, {useEffect}from 'react'
+import React, {useEffect, useState}from 'react'
 import QuestionList from './QuestionList'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom'
 //import './home.css'
 
 function Home({done, newQs, auth}) {
+
+    const [isToggle, setIsToggle] = useState('newQs');
+
 
     const navigate = useNavigate()
     const info =[
@@ -25,15 +28,23 @@ function Home({done, newQs, auth}) {
     }, [auth,navigate])
   return (
     <div>
-        {
-            info.map((k)=>(
-                <div key={k.key} >
-                    
-                        <QuestionList title={k.title} ids={k.ids} />
-                    
-                </div>
-            ))
-        }
+        <label>Type of Questions</label><br></br>
+            <select value={isToggle} onChange={(e) => setIsToggle(e.target.value)}>
+                <option value='newQs'>
+                    Un answered Questions
+                </option>
+                <option value='done'>
+                    Answered Question
+                </option>
+
+            </select>
+            {isToggle === 'newQs' && <div>
+                <QuestionList title={info[0].title} ids={info[0].ids} />
+            </div>}
+            {isToggle === 'done' && <div>
+
+                <QuestionList title={info[1].title} ids={info[1].ids} />
+            </div>}
     </div>
   )
 }

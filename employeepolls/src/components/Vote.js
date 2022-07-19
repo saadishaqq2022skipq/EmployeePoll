@@ -31,6 +31,7 @@ function Vote({dispatch, questions, users, auth}) {
         <Avatar src= {users[questions[question_id].author].avatarURL} sx={{ width: 250, height: 250 }}/>
         <h3>Would You Rather</h3>
     <div className='voteCard'>
+        <div>
         <Card sx={{ maxWidth: 275 }}>
             <CardContent>
         
@@ -50,6 +51,10 @@ function Vote({dispatch, questions, users, auth}) {
             </CardActions>
          </Card>
          <p>Total votes: {questions[question_id].optionOne['votes'].length} ({100*questions[question_id].optionOne['votes'].length/(questions[question_id].optionOne['votes'].length+questions[question_id].optionTwo['votes'].length)}%)</p>
+        </div>
+
+        <div>
+        
          <Card sx={{ maxWidth: 275 }}>
             <CardContent>
         
@@ -69,7 +74,8 @@ function Vote({dispatch, questions, users, auth}) {
             </CardActions>
          </Card>
          <p>Total votes: {questions[question_id].optionTwo['votes'].length} ({100*questions[question_id].optionTwo['votes'].length/(questions[question_id].optionOne['votes'].length+questions[question_id].optionTwo['votes'].length)}%)</p>
-    </div>
+        </div>
+        </div>
 
     </div>
   )

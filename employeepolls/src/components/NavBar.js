@@ -21,7 +21,7 @@ function NavBar({dispatch, auth }) {
             <Link to="/leaderboard" underline='none' data-testid='leaderboard'>
                 Leaderboard
             </Link>
-            <Link to='/pollpage' underline='none' data-testid='new'>
+            <Link to='/add' underline='none' data-testid='new'>
                 New
             </Link>
         </div>

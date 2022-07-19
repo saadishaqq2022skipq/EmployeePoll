@@ -34,7 +34,7 @@ function Login({dispatch, authUser, users}) {
         <div className='login_text'>
         
 
-        <caption>Select User</caption>
+        <h4>Select User</h4>
         <select
            value={user}
            onChange={(e)=>setUser(e.target.value)}

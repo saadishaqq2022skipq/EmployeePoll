@@ -27,7 +27,7 @@ function App({dispatch, auth}) {
         <Route exact path='/' element={<Home />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/leaderboard' element={<Leaderboard />} />
-        <Route exact path='/pollpage' element={<PollPage />} />
+        <Route exact path='/add' element={<PollPage />} />
         <Route exact path='/questions/:question_id' element={<Vote />} />
       </Routes>
     </div>
